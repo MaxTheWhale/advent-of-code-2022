@@ -27,13 +27,11 @@ object Day2:
   def calculateScore(opponentMove: Shape, playerMove: Shape): Int = {
     val shapeScore = shapePoints(playerMove)
     val outcome = (opponentMove, playerMove) match {
-      case (Shape.Rock, Shape.Paper)     => Outcome.Win
-      case (Shape.Paper, Shape.Scissors) => Outcome.Win
-      case (Shape.Scissors, Shape.Rock)  => Outcome.Win
-      case (Shape.Rock, Shape.Scissors)  => Outcome.Lose
-      case (Shape.Paper, Shape.Rock)     => Outcome.Lose
-      case (Shape.Scissors, Shape.Paper) => Outcome.Lose
-      case (_, _)                        => Outcome.Draw
+      case (Shape.Rock, Shape.Paper)            => Outcome.Win
+      case (Shape.Paper, Shape.Scissors)        => Outcome.Win
+      case (Shape.Scissors, Shape.Rock)         => Outcome.Win
+      case (_, _) if opponentMove == playerMove => Outcome.Draw
+      case (_, _)                               => Outcome.Lose
     }
     shapeScore + outcomePoints(outcome)
   }
