@@ -4,5 +4,6 @@
     case 1 => Day1.findHighestCalories
     case 2 => Day2.rockPaperScissors
     case 3 => Day3.organiseRucksack
+    case 4 => Day4.findOverlaps
     case _ => println(s"Day ${day} not solved yet!")
   }
