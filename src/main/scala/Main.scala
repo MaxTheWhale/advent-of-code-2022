@@ -6,5 +6,6 @@
     case 3 => Day3.organiseRucksack
     case 4 => Day4.findOverlaps
     case 5 => Day5.arrangeCrates
+    case 6 => Day6.findMarkers
     case _ => println(s"Day ${day} not solved yet!")
   }
